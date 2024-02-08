@@ -1,4 +1,5 @@
-# E-Commerce made with React
+# E-Commerce Web
+E-Commerce made with React
 
 # Getting Started with Create React App
 
@@ -32,4 +33,3 @@ You can learn more in the [Create React App documentation].
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-# E-Comm
