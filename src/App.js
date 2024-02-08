@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
+// import Product from "./components/Product";
+import { Provider } from "react-redux";
+import store from "./store";
+import Header from "./components/Header";
+import ProductList from "./components/ProductList";
+import { useState } from "react";
+import CartContextProvider from "./context/cart";
+// import Mycart from "./components/Mycart"; // Import Mycart component here
 
-function App() {
+export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Provider store={store}>
+        <CartContextProvider>
+          <Header
+            setSelectedCategory={setSelectedCategory}
+            selectedCategory={selectedCategory}
+          />
+          <ProductList selectedCategory={selectedCategory} />
+          {/* <Mycart /> To be Included */}
+        </CartContextProvider>
+      </Provider>
     </div>
   );
 }
-
-export default App;
